@@ -67,7 +67,7 @@ export function clearFilters() {
 
 // --- Manifest loading ---
 
-export async function loadManifest(url = '/manifest.json') {
+export async function loadManifest(url = import.meta.env.BASE_URL + 'manifest.json') {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Manifest fetch failed: ${response.status}`);
